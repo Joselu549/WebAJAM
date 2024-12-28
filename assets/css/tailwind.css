@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-50;
+}
+
+@layer components {
+  /* .btn {
+    @apply px-3 py-2 bg-[#fed136] text-white rounded-md text-sm;
+  } */
+
+  /* Estilo inicial del botón */
+  .btn {
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s ease, transform 0.3s ease;
+  }
+
+  /* Cambia el estilo al pasar el ratón */
+  .btn:hover {
+    color: #fed136;
+  }
+
+  /* Cambia el estilo cuando el botón tiene foco (por teclado) */
+  .btn:focus {
+    background-color: #fed136;
+    color: white;
+    transform: scale(1.05); /* Un ligero aumento de tamaño */
+    transition: .15s;
+  }
+}
