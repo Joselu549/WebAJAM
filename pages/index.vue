@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="relative">
-      <!-- Imagen con filtro -->
+      
       <img
         src="assets/img/fondo_inicio.jpg"
         alt="Foto con filtro blanco y negro"
         class="w-full object-cover filter grayscale"
       />
-      <!-- Elementos encima de la imagen -->
+      
       <div
         class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50"
       >
@@ -22,11 +22,7 @@
         >
       </div>
     </div>
-    <!-- <div class="photo-container">
-            <img src="assets/img/fondo_inicio.jpg" alt="Foto con filtro blanco y negro"
-            class="w-full h-full object-cover filter grayscale hover:filter-none transition duration-300">
-            <a class="overlay btn2 text-4xl font-bold" href="https://forms.gle/Px9LqxyZR8guMCf36" target="_blank">¡Únete a nosotros!</a>
-        </div> -->
+
     <div class="container mx-auto py-4 text-center">
       <h2>Inicio</h2>
       <p>
@@ -139,10 +135,21 @@
         veritatis rerum dicta tempore praesentium est minima ipsum in, ex a.
       </p>
     </div>
+    <!-- <div>
+      <CarruselFotosInicio />
+    </div> -->
   </div>
 </template>
 
 <script>
+import CarruselFotosInicio from '~/components/CarruselFotosInicio.vue';
+
+export default {
+  components: {
+    CarruselFotosInicio,  
+  },
+};
+
 definePageMeta({
   layout: "inicio",
 });
