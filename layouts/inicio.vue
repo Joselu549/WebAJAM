@@ -5,7 +5,8 @@
   <div>
     <header class="shadow-md">
       <nav
-        class="fixed top-0 left-0 w-full z-50 bg-[#333] mx-auto p-1 flex justify-between items-center"
+        :class="navClasses"
+        class="fixed top-0 left-0 w-full z-50 mx-auto p-1 flex justify-between items-center transition-all duration-300"
       >
         <NuxtLink to="/" exact-active-class="text-yellow-500" class="font-bold">
           <img
@@ -43,8 +44,7 @@
         <div></div>
       </nav>
     </header>
-
-    <div class="container mx-auto mt-[60px] p-4 text-center">
+    <div class="mx-auto text-center">
       <slot />
     </div>
 
@@ -86,7 +86,43 @@
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      isScrolled: false,
+    };
+  },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      this.isScrolled = window.scrollY > 700;
+    },
+  },
+  computed: {
+    navClasses() {
+      return {
+        "bg-transparent": !this.isScrolled,
+        "bg-[#333]": this.isScrolled,
+        "transition-all": true,
+        "duration-300": true,
+      };
+    },
+  },
+};
+</script>
+
 <style scoped>
+header {
+  background-color: #333;
+  color: white;
+}
+
 header nav {
   color: #fed136;
 }

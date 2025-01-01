@@ -18,12 +18,14 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.5s ease, transform 0.3s ease;
+    transition:
+      background-color 0.5s ease,
+      transform 0.3s ease;
   }
 
   /* Cambia el estilo al pasar el ratón */
   .btn:hover {
-    color: #fed136;
+    color: #fbbf24;
   }
 
   /* Cambia el estilo cuando el botón tiene foco (por teclado) */
@@ -31,6 +33,30 @@ body {
     background-color: #fed136;
     color: white;
     transform: scale(1.05); /* Un ligero aumento de tamaño */
-    transition: .15s;
+    transition: 0.15s;
+  }
+
+  .btn:hover:focus {
+    background-color: #fbbf24;
+    transform: scale(1.05); /* Un ligero aumento de tamaño */
+    transition: 0.15s;
+  }
+
+  .btn2 {
+    color: white;
+    background-color: #fed136;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transform: scale(0.95); /* Un ligero aumento de tamaño */
+    transition: 0.15s;
+    font-size: 1.5em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  }
+
+  .btn2:hover {
+    background-color: #fbbf24;
+    transform: scale(1.05); /* Un ligero aumento de tamaño */
+    transition: 0.15s;
   }
 }
