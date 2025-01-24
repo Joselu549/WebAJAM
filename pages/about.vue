@@ -2,112 +2,98 @@
   <div>
     <h2>Sobre nosotros</h2>
     <p>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi nobis eius
-      animi libero, maiores doloremque dolores rerum. Corporis id a eveniet
-      explicabo, animi exercitationem, reiciendis harum ratione quam officiis
-      temporibus aspernatur. Placeat, eaque quas. Maxime rem sapiente fugiat
-      amet ad aperiam ipsa ratione accusantium omnis tempora, corporis iste
-      magni! Beatae sapiente, dolore deleniti dolor cumque aspernatur quae
-      placeat corrupti omnis explicabo magni exercitationem at laudantium sit
-      molestiae nemo ab impedit, voluptatibus reiciendis cum illo obcaecati
-      facere neque quasi. Labore nihil ea quis nostrum earum ipsa omnis magnam,
-      reprehenderit cumque libero, quam vel animi incidunt error! Odit modi
-      aliquam at iusto ea vero, voluptatibus quibusdam accusamus nisi
-      consequuntur id unde praesentium voluptatum voluptatem hic, veritatis ex,
-      repudiandae facilis minus tenetur in nobis excepturi sequi repellat.
-      Mollitia ad quae, et quod vel fuga, officia, molestias hic delectus quos
-      cumque consectetur cupiditate iusto voluptatibus totam qui? Minus hic
-      iusto sunt fugiat, aspernatur ex mollitia odit iste. Dignissimos cumque
-      consequuntur labore, rem ut aliquam perferendis nesciunt nulla asperiores
-      pariatur id facere delectus minus at magni ducimus cum excepturi
-      voluptatem mollitia incidunt porro sunt. Itaque, rerum? Alias ea placeat
-      quaerat officia, doloribus quod doloremque vel eos nobis, voluptates nisi.
-      Sed cupiditate saepe at quos perferendis maiores dolorem neque, repellat
-      quaerat non laudantium ipsam tenetur porro, nesciunt expedita. Vitae
-      architecto reprehenderit cumque in, quo minima placeat pariatur
-      consectetur, saepe totam quia quas assumenda neque tempora sapiente harum
-      nihil eius! Repellendus, ipsam deleniti! Eligendi natus fugiat accusamus
-      eos facere odit sed obcaecati suscipit porro cum ipsum error mollitia
-      velit a totam, minus voluptatum molestias adipisci fugit maxime
-      consequuntur. Repellendus, fugit cum! Odit, ea? Perspiciatis corporis
-      consectetur molestias inventore saepe officiis illum fugiat, culpa eaque
-      accusantium illo soluta quos est enim repellat delectus molestiae adipisci
-      excepturi quisquam quas facere? Qui voluptas quod maiores. Reprehenderit
-      ducimus at ut in, debitis laudantium repellat omnis eligendi error
-      corporis ipsam expedita reiciendis. Temporibus officiis commodi, nostrum
-      facere voluptas nemo laudantium animi in corrupti molestias repellat porro
-      vero quas alias nam aliquid dicta dignissimos facilis debitis quia dolore.
-      Magni laboriosam laborum nobis dicta cumque temporibus accusamus illo
-      perspiciatis tempora adipisci minus obcaecati tempore nesciunt nemo
-      soluta, consequatur voluptates reiciendis officia minima, provident
-      repellendus, quis blanditiis. Cupiditate praesentium recusandae ut
-      provident nostrum perspiciatis aspernatur error nemo, ipsa odio. Quia
-      facilis perspiciatis impedit exercitationem accusamus et reprehenderit
-      esse, voluptatum delectus ipsa in animi itaque blanditiis eaque fugit quas
-      eveniet, nesciunt ut aliquid sunt saepe. Earum, eius, suscipit, repellat
-      aspernatur officiis consectetur dolorum voluptatibus deserunt minima a
-      velit nobis voluptates? Consequatur obcaecati eum officia commodi, sunt a
-      provident saepe omnis dicta eius tempore magni soluta quis aperiam ullam
-      fuga perferendis accusantium voluptatum maxime sequi optio? Recusandae
-      reiciendis itaque deserunt voluptatum beatae, harum fugiat autem provident
-      sequi atque vitae voluptate quia et officiis ipsam enim perspiciatis.
-      Earum porro aut minima quas sequi quos veniam consequatur ut? Nulla et
-      voluptates molestiae saepe ut repellendus repudiandae impedit voluptatem
-      doloremque soluta, harum maxime ea sint eius facere eos magnam doloribus
-      numquam dolore magni aliquam, ratione tempora recusandae error. Vero,
-      laborum dicta quam quibusdam commodi sit omnis eaque atque rerum molestias
-      libero similique ad nesciunt quos nam nobis modi odio sapiente? Porro
-      eaque delectus enim nihil dignissimos excepturi omnis labore neque
-      inventore fugit libero natus quia magnam quam minus voluptatum vero culpa
-      ut, dolores reprehenderit. Labore libero voluptas facilis quis sint optio
-      hic ducimus nulla, sunt numquam eaque in rerum necessitatibus officia
-      atque corrupti dolore, ipsam ratione. Rem nisi ex incidunt at aut
-      assumenda numquam! At voluptas, quod ipsum tempora recusandae ab obcaecati
-      dolores fuga corporis ex consequatur dolorem officia laborum asperiores
-      illo quis dolore optio laudantium. Corporis labore deserunt quam esse
-      sapiente alias voluptatum repellat odio. At ducimus eius itaque ipsam,
-      corporis ad nisi asperiores illum soluta similique sunt atque. Assumenda,
-      fugit harum eaque quo, aut facilis quasi provident qui dolorem quae rem
-      adipisci laboriosam dicta esse, praesentium quia quod culpa quidem ut.
-      Placeat omnis dolore ipsa, officia impedit corporis ex asperiores,
-      voluptas totam, in autem quaerat temporibus cupiditate libero sequi iusto
-      quisquam. Repudiandae non quos ducimus culpa, adipisci nostrum facilis
-      possimus facere distinctio dolorum assumenda quidem iure similique ipsa
-      consequatur quam nemo earum totam quod dicta maxime blanditiis fugiat
-      quia. Tempora veritatis maxime illo delectus nihil aut sunt. Magnam facere
-      id suscipit perferendis quod! Modi, alias itaque veritatis dolore quo sed
-      libero quae! Eos iure cumque ullam illum provident blanditiis error,
-      suscipit ab ipsum doloremque alias. Corporis praesentium ab eius quis ex
-      nam doloribus cum, natus quae itaque porro amet adipisci repellat vel
-      cumque excepturi, nostrum voluptatem consequuntur? Delectus temporibus
-      neque doloremque suscipit molestias voluptas iste cumque placeat, sequi
-      recusandae dolor aspernatur, cupiditate tenetur officiis. Minus commodi
-      quae exercitationem rerum, ipsam nisi autem quos placeat aspernatur. Nihil
-      vel voluptatibus et laborum nemo. Non aperiam, alias sunt, impedit commodi
-      aliquam est nemo eum tempora facilis ducimus molestiae quas recusandae ex
-      praesentium natus sequi facere? Quae, esse ab doloribus soluta aliquam
-      officia, dolorem eius, doloremque corrupti ducimus expedita culpa. Esse
-      deleniti reiciendis nulla quos possimus qui ex voluptates magnam,
-      cupiditate explicabo recusandae sunt exercitationem, quis molestias?
-      Laboriosam esse accusamus necessitatibus quas, et optio expedita deserunt
-      vitae amet, minus quis maiores. Deserunt et alias cupiditate magnam odio
-      illum id hic tenetur error veritatis. Odit veritatis placeat totam
-      blanditiis accusamus harum reiciendis, autem nisi ex soluta eius
-      voluptates animi? Quaerat fugit provident praesentium voluptatum
-      reprehenderit pariatur eius tempore ad a corporis ipsam culpa aperiam
-      dolor id facere sapiente, minus, necessitatibus eaque facilis numquam
-      laboriosam, nulla sed? Beatae illum repellendus ea, sunt perspiciatis
-      dolorum dignissimos. Repellendus doloribus porro tempora voluptatem labore
-      ad accusamus nulla dolorum veritatis? Id, mollitia. Quis inventore debitis
-      quas. Labore possimus beatae placeat sunt quisquam velit laboriosam
-      architecto vitae, rerum sequi ut iste earum nesciunt nam blanditiis ipsum
-      quaerat doloremque. Molestias, quibusdam reprehenderit soluta tempora ad
-      veritatis perferendis ut quasi rem consectetur, laboriosam iusto eius,
-      incidunt mollitia sit dolores reiciendis necessitatibus at consequuntur.
-      Qui nisi, porro natus hic sunt fuga rem vel esse voluptates ipsa eaque
-      magni cumque quo ad veritatis rerum dicta tempore praesentium est minima
-      ipsum in, ex a.
+      La Asociación Jumillana Amigos de la Música fue fundada en 1980 por un
+      grupo de entusiastas jumillanos, con el apoyo del Excmo. Ayuntamiento de
+      Jumilla, con el fin de ocupar el espacio musical dejado por la
+      desaparecida Banda de Música Municipal.
     </p>
+    <p>
+      Una vez constituida la Asociación, se crea una Academia de Música y con
+      los alumnos formados en esta, se crea la Banda de Música de la Asociación.
+      Esta hace su presentación oficial, en Jumilla el 12 de Abril de 1981. Su
+      primer director fue el compositor jumillano D. Julián Santos Carrión, a
+      quien sucedería en 1982 D. José Bacigalupe Serrano, desde 1987 y hasta
+      1996 dirigió la Academia y Banda de la Asociación D. Antonio Milán Juan,
+      durante el año 1997 D. Sergio Fernández Diez-Picazo. En 1998 D. José Ant.
+      Arce Corbalán. Del 1999 al 2004 la dirigió el músico y compositor
+      georgiano D. Zurab Kala al que sucedió D. Julián Andreo Jiménez hasta
+      noviembre de 2008. Desde diciembre de 2008, D. Mario Ortuño Gelardo es el
+      director de la Banda de Música a sí como de su Academia hasta octubre de
+      2015, año en el que entraría como director de la Banda de Música Titular
+      Ángel Hernández Azorín.
+    </p>
+    <p>
+      Desde su creación, la Banda ha desarrollado una intensa actividad musical,
+      participando en numerosos ciclos de conciertos en la localidad, en toda la
+      región de Murcia y las Regiones limítrofes de Castilla la Mancha y
+      Valencia. Participa en varios programas radiofónicos de Radio Nacional de
+      España: “A TODA BANDA” y “PLAZA MAYOR”, y en programas televisivos a nivel
+      regional y nacional.
+    </p>
+    <p>
+      En 1989 se forma la Banda de Música Juvenil, con el objetivo de preparar a
+      los educandos de la Academia y los integrantes noveles de la Banda de la
+      Asociación.
+    </p>
+    <p>
+      Desde el año 1983, en el mes de noviembre la Asociación viene celebrando
+      una semana cultural en honor a Santa Cecilia, con actuaciones de solistas
+      y grupos de reconocido prestigio, tanto nacionales como extranjeros. En
+      1993, se organiza el primer Festival de Bandas de Música, con la
+      participación de dos bandas invitadas y la Banda de la Asociación,
+      intentando mantener un alto nivel interpretativo de cada una de las
+      agrupaciones participante y de las obras elegidas.
+    </p>
+    <p>Entre los mayores logros obtenidos cabe destacar:</p>
+    <ul>
+      <li>
+        En los programas - concursos de televisión española “GENTE JOVEN” y
+        “NUEVA GENTE”, quedando semifinalistas en el primero de ellos.
+      </li>
+      <li>
+        En 1997 participa en el "Festival Internacional de Bandas de Música
+        Villa Altea”, junto a otras bandas de Música con reconocido prestigio
+        como el Ateneo Musical de Cullera y la Sociedad Musical de Alcira,
+        obteniendo el tercer premio. En el 2001 participa en la 2º sección del I
+        Certamen Nacional de Zarzuela para Bandas de Música organizado por la
+        Fundación Nacional de la Zarzuela, obteniendo un 2º accesit.
+      </li>
+      <li>
+        En el año 2003 participa en el I Certamen Regional de Bandas de la
+        Región de Murcia, obteniendo un segundo premio en la 1ª sección y en el
+        IV Certamen Internacional de Bandas de Música “Villa de Aranda”
+        obteniendo el Premio Especial al Desfile. En el año 2005 participa en el
+        II Certamen Regional de Bandas de la Región de Murcia, obteniendo un
+        segundo premio en la 1ª sección.
+      </li>
+      <li>
+        En Julio de 2008 participa en el "III Certamen Nacional de Bandas de
+        Música Enrique García Asensio" en Minglanilla (Cuenca), obteniendo un
+        meritorio tercer puesto compitiendo con bandas de gran pestigio. En este
+        año inaugura el ciclo "Música entre Vinos", organizado por la Asociación
+        Ruta del Vino de Jumilla, participando y colaborando en todas las
+        anualidades posteriores.
+      </li>
+      <li>
+        Desde el año 2012 hasta 2017 coorganiza el curso "Jumilla Low Brass",
+        festival de referencia nacional, enfocado únicamente a la tuba y al
+        bombardino.
+      </li>
+      <li>
+        En el año 2018, se participó en el "VI Certamen de Bandas de Música Cruz
+        de Humilladero Ciudad de Málaga".
+      </li>
+      <li>
+        Esta Asociación ha publicado tres grabaciones discográficas de su Banda
+        de Música: “Marchas Procesionales”, “Recuerdos Jumillanos” (pasodobles),
+        todas obras de compositores jumillanos o vinculados a esta ciudad y el
+        Cd "Música y Armonía Contra el Cáncer", a beneficio de la AECC.
+      </li>
+      <li>
+        En el año 2023 participó en el certamen internacional de bandas de
+        música "VILLA DE ARANDA", consiguiendo un 2º puesto
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -119,5 +105,10 @@ h2 {
 
 p {
   margin: 20px 0;
+}
+
+ul {
+  text-align: left;
+  list-style: square;
 }
 </style>
