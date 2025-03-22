@@ -8,7 +8,6 @@ import { Component, HostListener } from '@angular/core';
 })
 export class NavBarComponent {
   isScrolled = false
-
   @HostListener('window:scroll', [])
   onWindowScroll() {
     this.isScrolled = window.scrollY > 1000; // Cambia cuando el scroll pasa los 100px
