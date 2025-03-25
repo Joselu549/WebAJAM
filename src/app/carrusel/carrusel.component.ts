@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 
 @Component({
   selector: 'app-carrusel',
@@ -7,59 +7,23 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   styleUrl: './carrusel.component.css'
 })
 export class CarruselComponent implements OnInit, OnDestroy {
-  private intervalId?: number;
-  currentImageIndex = 0;
-  prevImageId = 0;
-  images = [
-    {
-      id: 1,
-      src: 'assets/images/fondo_inicio.jpg',
-      active: true
-    },
-    {
-      id: 2,
-      src: 'assets/images/fondo_inicio2.jpg',
-      active: false
-    },
-    {
-      id: 3,
-      src: 'assets/images/fondo_inicio3.jpg',
-      active: false
-    },
-    {
-      id: 4,
-      src: 'assets/images/fondo_inicio4.jpg',
-      active: false
-    },
-  ]
+  @Input() images: {id: number, src: string}[] = [];
+  currentIndex = 0;
+  interval: any;
 
   ngOnInit() {
-    this.startCarousel();
+    this.startAutoSlide();
   }
 
   ngOnDestroy() {
-    if (this.intervalId) {
-      window.clearInterval(this.intervalId);
+    if (this.interval) {
+      clearInterval(this.interval);
     }
   }
 
-  startCarousel() {
-    this.intervalId = window.setInterval(() => {
-      this.nextImage();
-    }, 5000); // 5 segundos
-  }
-
-  nextImage() {
-    // Guardar el ID de la imagen actual como previa
-    this.prevImageId = this.images[this.currentImageIndex].id;
-    
-    // Desactivar la imagen actual
-    this.images[this.currentImageIndex].active = false;
-    
-    // Avanzar al siguiente índice
-    this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
-    
-    // Activar la nueva imagen
-    this.images[this.currentImageIndex].active = true;
+  startAutoSlide() {
+    this.interval = setInterval(() => {
+      this.currentIndex = (this.currentIndex + 1) % this.images.length;
+    }, 10000);
   }
 }

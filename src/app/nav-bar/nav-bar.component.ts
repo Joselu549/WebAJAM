@@ -39,14 +39,18 @@ export class NavBarComponent implements AfterViewInit, OnDestroy {
     const carruselElement = document.querySelector('app-carrusel');
     if (carruselElement) {
       this.carouselHeight = carruselElement.getBoundingClientRect().height;
-      console.log('Altura actualizada del carrusel:', this.carouselHeight);
       // Si hay carrusel, el estilo depende del scroll
-      this.isScrolled = window?.scrollY > (this.carouselHeight - 50);
+      // Solo aplicar el efecto de scroll si el carrusel está en el top
+      const top = carruselElement.getBoundingClientRect().top;
+      if (top === 0) {
+        this.isScrolled = window?.scrollY > (this.carouselHeight - 50);
+      } else {
+        this.isScrolled = true;
+      }
     } else {
       // Si no hay carrusel, activamos el estilo directamente
       this.carouselHeight = 0;
       this.isScrolled = true;
-      console.log('No se encontró el carrusel, activando estilo de la barra');
     }
   }
 
@@ -55,6 +59,11 @@ export class NavBarComponent implements AfterViewInit, OnDestroy {
     this.updateCarouselHeight(); // Actualizar altura en cada scroll
   }
 
+  @HostListener('window:resize', [])
+  onWindowResize() {
+    this.updateCarouselHeight(); // Actualizar altura en cada resize
+  }
+  
   ngOnDestroy() {
     // Limpiar la suscripción cuando el componente se destruye
     if (this.routerSubscription) {

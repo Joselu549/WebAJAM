@@ -9,5 +9,22 @@ import { RouterModule } from '@angular/router';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-
+  carouselImages = [
+    {
+      id: 1,
+      src: 'assets/images/bg/fondo_inicio.jpg'
+    },
+    {
+      id: 2,
+      src: 'assets/images/bg/fondo_inicio2.jpg'
+    },
+    {
+      id: 3,
+      src: 'assets/images/bg/fondo_inicio3.jpg'
+    },
+    {
+      id: 4,
+      src: 'assets/images/bg/fondo_inicio4.jpg'
+    },
+  ];
 }

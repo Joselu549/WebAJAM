@@ -1,17 +1,7 @@
-<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-  <div class="carrusel">
+<div class="carousel">
+  <div class="carousel-track" [style.transform]="'translateX(' + (-currentIndex * 100) + '%)'">
     @for (img of images; track img.id) {
-      <img [src]="img.src" 
-           alt="Imagen {{ $index + 1 }}" 
-           [class.active]="img.active"
-           [class.prev]="img.id === prevImageId">
+      <img [src]="img.src"/>
     }
   </div>
-  <div class="texto">
-    <p>¿Quieres formar parte de nuestra familia?</p>
-    <h1>
-      ¡Únete a nosotros!
-    </h1>
-    <a class="btn" href="https://forms.gle/Px9LqxyZR8guMCf36" target="_blank">¡Únete!</a>
-  </div>
-</div>
+</div>  
