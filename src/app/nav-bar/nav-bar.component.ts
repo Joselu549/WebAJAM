@@ -10,6 +10,7 @@ import { filter, Subscription } from 'rxjs';
 })
 export class NavBarComponent implements AfterViewInit, OnDestroy {
   isScrolled = true;
+  isSubmenuOpen = false;
   carouselHeight = 0;
   private routerSubscription?: Subscription;
 
@@ -21,6 +22,10 @@ export class NavBarComponent implements AfterViewInit, OnDestroy {
       // Esperar a que el DOM se actualice
       setTimeout(() => this.updateCarouselHeight(), 0);
     });
+  }
+
+  toggleSubMenu() {
+    this.isSubmenuOpen = !this.isSubmenuOpen;
   }
 
   @ViewChild('carrusel', { static: false }) carruselRef?: ElementRef;

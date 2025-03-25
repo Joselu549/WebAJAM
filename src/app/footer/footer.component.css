@@ -1,0 +1,51 @@
+a {
+  margin-bottom: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  transition: 0.25s ease-in-out;
+}
+
+a:hover {
+  transform: scale(1.1);
+  transition: 0.25s ease-in-out;
+}
+
+.footer {
+  background: var(--color-black);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+.footer-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-title {
+  font-weight: bold;
+}
+
+hr {
+  border: 1px solid whitesmoke;
+  width: 50%;
+  margin: 15px auto;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.social-icon {
+  width: 35px;
+  height: 35px;
+}
+
+.footer-copy {
+  font-size: 14px;
+}

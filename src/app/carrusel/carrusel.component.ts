@@ -46,7 +46,7 @@ export class CarruselComponent implements OnInit, OnDestroy {
   startCarousel() {
     this.intervalId = window.setInterval(() => {
       this.nextImage();
-    }, 10000); // 10 segundos
+    }, 5000); // 5 segundos
   }
 
   nextImage() {

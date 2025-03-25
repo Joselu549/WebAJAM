@@ -44,3 +44,28 @@
   font-size: 3rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
+.texto p {
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+  margin-top: 20px;
+  background-color: var(--color-gold);
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.25s;
+  border: 1px solid transparent;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  transition: 0.25s ease-in-out;
+}

@@ -30,10 +30,11 @@ img:hover {
 }
 
 .nav-bar.solid-bg {
-  background: var(--color-black-gold); /* Fondo oscuro sólido */
+  background: var(--color-black); /* Fondo oscuro sólido */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.nav-bar.solid-bg a {
+.nav-bar.solid-bg button {
   color: var(--color-bg);
   transition: 0.25s;
 }
@@ -43,7 +44,7 @@ img:hover {
   gap: 20px;
 }
 
-.nav-bar-center a {
+.nav-bar-center button {
   position: relative;
   text-decoration: none;
   color: #fff;
@@ -56,7 +57,7 @@ img:hover {
   background-color: transparent;
 }
 
-.nav-bar-center a:hover {
+.nav-bar-center button:hover {
   border-color: var(--color-gold);
   transition: 0.25s;
   transform: scale(1.1);
@@ -67,4 +68,31 @@ img:hover {
   flex: 1;
   display: flex;
   align-items: center;
+}
+
+.submenu {
+  position: absolute;
+  top: 70%;
+  left: 45%;
+  color: var(--color-bg);
+  padding: 10px;
+  transition: 0.25s;
+}
+
+.submenu.solid-bg {
+  background: var(--color-black);
+  border-radius: 15px;
+}
+
+.submenu li {
+  list-style: none;
+  margin: 5px 5px;
+}
+
+.submenu li button {
+  text-decoration: none;
+  color: var(--color-bg);
+  transition: 0.25s;
+  padding: 5px 10px;
+  display: block;
 }
