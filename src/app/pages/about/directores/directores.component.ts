@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { CarruselComponent } from '../../../carrusel/carrusel.component';
+import { FooterComponent } from "../../../footer/footer.component";
 
 @Component({
   selector: 'app-directores',
-  imports: [CarruselComponent],
+  imports: [CarruselComponent, FooterComponent],
   templateUrl: './directores.component.html',
   styleUrl: './directores.component.css'
 })
