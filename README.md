@@ -1,59 +1,46 @@
-# WebAjam
+# Astro Starter Kit: Basics
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.4.
-
-## Development server
-
-To start a local development server, run:
-
-```bash
-ng serve
+```sh
+npm create astro@latest -- --template basics
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-## Code scaffolding
+## 🚀 Project Structure
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Inside of your Astro project, you'll see the following folders and files:
 
-```bash
-ng generate component component-name
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src
+│   ├── assets
+│   │   └── astro.svg
+│   ├── components
+│   │   └── Welcome.astro
+│   ├── layouts
+│   │   └── Layout.astro
+│   └── pages
+│       └── index.astro
+└── package.json
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
-```bash
-ng generate --help
-```
+## 🧞 Commands
 
-## Building
+All commands are run from the root of the project, from a terminal:
 
-To build the project run:
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-```bash
-ng build
-```
+## 👀 Want to learn more?
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
