@@ -1,11 +1,24 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Inicio from '../layouts/Inicio.astro';
+import Carousel from '../components/Carousel.astro';
+import fondo1 from '../assets/images/fondo_inicio.webp';
+import fondo2 from '../assets/images/fondo_inicio2.webp';
+import fondo3 from '../assets/images/fondo_inicio3.webp';
+import fondo4 from '../assets/images/fondo_inicio4.webp';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const images = [
+  fondo1.src,
+  fondo2.src,
+  fondo3.src,
+  fondo4.src
+];
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<Inicio>
+  <Carousel 
+    title="Asociación Jumillana Amigos de la Música" 
+    images={images}
+    autoPlay={true}
+    interval={4000}
+  />
+</Inicio>

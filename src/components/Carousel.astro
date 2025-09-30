@@ -1,0 +1,248 @@
+---
+interface Props {
+  title: string;
+  images: string[];
+  autoPlay?: boolean;
+  interval?: number;
+}
+
+const { title, images, autoPlay = true, interval = 5000 } = Astro.props;
+---
+
+<div class="carousel-container">
+  <div class="carousel" id="carousel">
+    {images.map((image, index) => (
+      <div class="carousel-slide" data-slide={index}>
+        <img src={image} alt={`Slide ${index + 1}`} />
+      </div>
+    ))}
+  </div>
+  
+  <div class="carousel-title">
+    <h1>{title}</h1>
+    <a href="/sobre-nosotros" class="carousel-btn" role="button" data-astro-prefetch>Sobre nosotros</a>
+  </div>
+</div>
+
+<style>
+  .carousel-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .carousel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .carousel-slide {
+    min-width: 100vw;
+    width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .carousel-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+    color: var(--tertiary-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+  }
+
+  .carousel-title * {
+    pointer-events: auto;
+  }
+
+  .carousel-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    margin: 0 0 2rem 0;
+    font-family: 'Rubik', sans-serif;
+    letter-spacing: 2px;
+    animation: fadeInUp 1s ease-out;
+  }
+
+  .carousel-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-color-third));
+    color: var(--secondary-color);
+    text-decoration: none;
+    border-radius: 50px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(198, 163, 79, 0.3);
+    animation: fadeInUp 1s ease-out 0.5s both;
+    text-transform: uppercase;
+    pointer-events: auto;
+    z-index: 20;
+    position: relative;
+  }
+
+  .carousel-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(198, 163, 79, 0.4);
+    background: linear-gradient(135deg, var(--primary-color-second), var(--primary-color));
+  }
+
+  .carousel-btn:active {
+    transform: translateY(0);
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .carousel-title h1 {
+      font-size: clamp(1.5rem, 6vw, 4rem);
+      margin: 0 0 1.5rem 0;
+    }
+
+    .carousel-btn {
+      padding: 10px 25px;
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<script define:vars={{ autoPlay, interval }}>
+  class Carousel {
+    constructor() {
+      this.slides = document.querySelectorAll('.carousel-slide');
+      this.currentSlide = 0;
+      this.intervalId = null;
+      this.isTransitioning = false;
+      
+      this.init();
+    }
+
+    init() {
+      if (this.slides.length === 0) return;
+      
+      // Configurar el carrusel para transición infinita
+      this.setupInfiniteCarousel();
+      
+      // Auto play
+      if (autoPlay) {
+        this.startAutoPlay();
+      }
+
+      // Pausar auto play al hacer hover
+      const container = document.querySelector('.carousel-container');
+      container?.addEventListener('mouseenter', () => this.stopAutoPlay());
+      container?.addEventListener('mouseleave', () => {
+        if (autoPlay) this.startAutoPlay();
+      });
+    }
+
+    setupInfiniteCarousel() {
+      const carousel = document.querySelector('.carousel');
+      if (!carousel || this.slides.length === 0) return;
+
+      // Clonar primera y última slide para transición infinita
+      const firstSlide = this.slides[0].cloneNode(true);
+      const lastSlide = this.slides[this.slides.length - 1].cloneNode(true);
+      
+      // Agregar clones
+      carousel.appendChild(firstSlide);
+      carousel.insertBefore(lastSlide, this.slides[0]);
+      
+      // Actualizar posición inicial (compensar por el clon al inicio)
+      this.currentSlide = 1;
+      carousel.style.transform = `translateX(-100vw)`;
+      
+      // Actualizar referencia a slides
+      this.slides = document.querySelectorAll('.carousel-slide');
+    }
+
+    showSlide(index, withTransition = true) {
+      const carousel = document.querySelector('.carousel');
+      if (!carousel || this.isTransitioning) return;
+      
+      this.isTransitioning = true;
+      
+      if (withTransition) {
+        carousel.style.transition = 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+      } else {
+        carousel.style.transition = 'none';
+      }
+      
+      const translateX = -index * 100;
+      carousel.style.transform = `translateX(${translateX}vw)`;
+      
+      this.currentSlide = index;
+      
+      // Resetear flag después de la transición
+      setTimeout(() => {
+        this.isTransitioning = false;
+        
+        // Manejar transición infinita
+        if (index === 0) {
+          // Si estamos en el clon del final, saltar al original
+          this.showSlide(this.slides.length - 2, false);
+          this.currentSlide = this.slides.length - 2;
+        } else if (index === this.slides.length - 1) {
+          // Si estamos en el clon del inicio, saltar al original
+          this.showSlide(1, false);
+          this.currentSlide = 1;
+        }
+      }, withTransition ? 800 : 0);
+    }
+
+    nextSlide() {
+      if (this.isTransitioning) return;
+      const nextIndex = this.currentSlide + 1;
+      this.showSlide(nextIndex);
+    }
+
+    startAutoPlay() {
+      this.stopAutoPlay();
+      this.intervalId = setInterval(() => {
+        this.nextSlide();
+      }, interval);
+    }
+
+    stopAutoPlay() {
+      if (this.intervalId) {
+        clearInterval(this.intervalId);
+        this.intervalId = null;
+      }
+    }
+  }
+
+  // Inicializar carousel cuando el DOM esté listo
+  document.addEventListener('DOMContentLoaded', () => {
+    new Carousel();
+  });
+</script>

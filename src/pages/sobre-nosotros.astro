@@ -1,0 +1,200 @@
+---
+import About from '../layouts/About.astro';
+---
+
+<About>
+  <header>
+    <title>Sobre Nosotros - Asociación Jumillana Amigos de la Música</title>
+  </header>
+  <main class="sobre-nosotros">
+    <div class="container">
+      <header class="hero-section">
+        <h1>Sobre Nosotros</h1>
+        <p class="subtitle">Conoce la historia de la Asociación Jumillana Amigos</p>
+      </header>
+
+      <section class="content">
+        <div class="text-content">
+          <h2>Nuestra Historia</h2>
+          <p>
+            La Asociación Jumillana Amigos nació con el objetivo de crear un espacio de encuentro 
+            y convivencia para los residentes de Jumilla y sus alrededores. Desde nuestros inicios, 
+            hemos trabajado incansablemente para fomentar la amistad, el compañerismo y la solidaridad 
+            entre nuestros miembros.
+          </p>
+
+          <h2>Nuestra Misión</h2>
+          <p>
+            Promover la unión y el bienestar de nuestra comunidad a través de actividades culturales, 
+            sociales y recreativas que fortalezcan los lazos de amistad y contribuyan al desarrollo 
+            personal y colectivo de nuestros asociados.
+          </p>
+
+          <h2>Nuestros Valores</h2>
+          <ul class="valores-list">
+            <li><strong>Amistad:</strong> Fomentamos relaciones sinceras y duraderas</li>
+            <li><strong>Solidaridad:</strong> Nos apoyamos mutuamente en los momentos importantes</li>
+            <li><strong>Respeto:</strong> Valoramos la diversidad y las diferencias individuales</li>
+            <li><strong>Compromiso:</strong> Trabajamos juntos por objetivos comunes</li>
+          </ul>
+
+          <h2>Actividades</h2>
+          <p>
+            Organizamos una gran variedad de eventos y actividades durante todo el año, incluyendo 
+            excursiones, cenas de convivencia, celebraciones tradicionales, actividades deportivas 
+            y culturales que enriquecen la vida social de nuestros miembros.
+          </p>
+        </div>
+      </section>
+
+      <div class="back-button-container">
+        <a href="/" class="back-button">Volver al inicio</a>
+      </div>
+    </div>
+  </main>
+</About>
+
+<style>
+  .sobre-nosotros {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--primary-color-first) 0%, var(--tertiary-color-first) 100%);
+    padding: 2rem 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .hero-section {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 3rem 0;
+  }
+
+  .hero-section h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    color: var(--primary-color-third);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    color: var(--secondary-color-second);
+    font-style: italic;
+  }
+
+  .content {
+    background: var(--tertiary-color);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 3rem;
+  }
+
+  .text-content {
+    padding: 3rem;
+    line-height: 1.8;
+  }
+
+  .text-content h2 {
+    color: var(--primary-color-third);
+    font-size: 2rem;
+    margin: 2rem 0 1rem 0;
+    font-weight: 600;
+  }
+
+  .text-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .text-content p {
+    color: var(--secondary-color-first);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+  }
+
+  .valores-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+
+  .valores-list li {
+    background: var(--primary-color-first);
+    margin: 0.5rem 0;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+    color: var(--secondary-color-first);
+    font-size: 1.1rem;
+  }
+
+  .valores-list li strong {
+    color: var(--primary-color-third);
+  }
+
+  .back-button-container {
+    text-align: center;
+  }
+
+  .back-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-color-third));
+    color: var(--secondary-color);
+    text-decoration: none;
+    border-radius: 50px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(198, 163, 79, 0.3);
+    text-transform: uppercase;
+  }
+
+  .back-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(198, 163, 79, 0.4);
+    background: linear-gradient(135deg, var(--primary-color-second), var(--primary-color));
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 1rem;
+    }
+
+    .hero-section {
+      margin-bottom: 2rem;
+      padding: 2rem 0;
+    }
+
+    .text-content {
+      padding: 2rem 1.5rem;
+    }
+
+    .text-content h2 {
+      font-size: 1.5rem;
+    }
+
+    .text-content p {
+      font-size: 1rem;
+    }
+
+    .valores-list li {
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+    }
+
+    .back-button {
+      padding: 10px 25px;
+      font-size: 1rem;
+    }
+  }
+</style>

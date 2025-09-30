@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+		<meta name="generator" content={Astro.generator} />
+		<title>AJAM - Asociación Jumillana Amigos de la Música</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style>
+	:root {
+		margin: 0 auto;
+    font-family: 'Rubik';
+    font-weight: 400;
+    --primary-color: #c6a34f;
+    --primary-color-first: #f7f2e5;
+    --primary-color-second: #e6c89a;
+    --primary-color-third: #a37d24;
+    --secondary-color: #000000;
+    --secondary-color-first: #333333;
+    --secondary-color-second: #666666;
+    --secondary-color-third: #999999;
+    --tertiary-color: #ffffff;
+    --tertiary-color-first: #f2f2f2;
+    --tertiary-color-second: #cccccc;
+    --tertiary-color-third: #b3b3b3;
+	}
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html, body {
+		height: 100%;
+		overflow-x: hidden;
+	}
+
+	body {
+		font-family: 'Rubik', sans-serif;
+	}
+</style>
