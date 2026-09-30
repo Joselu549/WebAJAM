@@ -1,7 +1,10 @@
 {
-  "name": "proyecto-astro",
+  "name": "nuclear-nebula",
   "type": "module",
   "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -9,7 +12,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/vercel": "^8.2.8",
-    "astro": "^5.13.11"
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.3.5",
+    "prettier": "^3.9.9",
+    "prettier-plugin-astro": "^1.1.0",
+    "tailwindcss": "^4.3.3"
+  },
+  "allowScripts": {
+    "esbuild": true
   }
 }

@@ -1,0 +1,15 @@
+---
+import logo from '../assets/images/webp/AJAM.webp';
+import '../styles/global.css';
+import GlassButton from './buttons/GlassButton.astro';
+---
+
+<div class="w-9/12 bg-amber-50 flex items-center justify-between mt-5 p-3 shadow-lg rounded-2xl border-primary border">
+  <img src={logo.src} width="110" height="50" alt="Home" />
+  <div class="flex items-center justify-center gap-5">
+    <GlassButton variant="primary">Inicio</GlassButton>
+    <GlassButton variant="secondary">Sobre nosotros</GlassButton>
+    <GlassButton variant="ghost">Contáctanos</GlassButton>
+  </div>
+  <img src={logo.src} width="110" height="50" alt="Home" />
+</div>
