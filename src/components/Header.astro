@@ -1,14 +1,29 @@
 ---
-import logo from '../assets/images/webp/AJAM.webp';
-import '../styles/global.css';
-import GlassButton from './GlassButton.astro';
+import { AnimatedUnderlineLink } from 'astro-component-kit'
+import logo from '../assets/images/webp/AJAM.webp'
+import '../styles/global.css'
 ---
 
 <div class="fixed top-5 left-5 right-5 flex items-center justify-between rounded-2xl border border-primary bg-amber-50 p-3 shadow-lg">
-  <img src={logo.src} width="110" height="50" alt="Home" />
-  <div class="flex items-center justify-center gap-5">
-    <GlassButton variant="primary">Inicio</GlassButton>
-    <GlassButton variant="secondary">Sobre nosotros</GlassButton>
-    <GlassButton variant="ghost">Contáctanos</GlassButton>
+  <img
+    src={logo.src}
+    width="110"
+    height="50"
+    alt="Home"
+  />
+  <div class="flex items-center justify-center gap-5 mr-5">
+    <AnimatedUnderlineLink
+      class="smart-link"
+      href="/"
+    >
+      Inicio
+    </AnimatedUnderlineLink>
+    <AnimatedUnderlineLink href="/sobre-nosotros">Sobre nosotros</AnimatedUnderlineLink>
+    <AnimatedUnderlineLink href="/contacto">Contáctanos</AnimatedUnderlineLink>
   </div>
 </div>
+<style>
+  .smart-link {
+    color: var(--color-secondary) !important;
+  }
+</style>

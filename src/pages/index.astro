@@ -1,10 +1,55 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import { GlassButton } from 'astro-component-kit'
+import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout>
-  <div class="flex items-center justify-center flex-col">
-    <h1>AJAM</h1>
-    <h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1><h1>AJAM</h1>
-  </div>
+  <section class="flex flex-col items-center justify-center gap-6 px-6 py-16 text-center">
+    <h1 class="text-5xl font-black md:text-7xl title">AJAM</h1>
+    <p class="max-w-2xl text-lg text-secondary-first/80">
+      Asociación Jumillana Amigos de la Música.
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      <GlassButton
+        href="/sobre-nosotros"
+        variant="primary"
+        size="lg"
+      >
+        Sobre nosotros
+      </GlassButton>
+      <GlassButton
+        href="/contacto"
+        variant="ghost"
+        size="lg"
+      >
+        Contáctanos
+      </GlassButton>
+    </div>
+  </section>
+
+  <section class="grid gap-6 px-6 pb-16 md:grid-cols-3">
+    <article class="rounded-2xl border border-primary bg-secondary-first/10 p-6 shadow-lg">
+      <h2 class="text-xl font-bold text-secondary">Conciertos</h2>
+      <p class="mt-2 text-secondary-first/80">Temporada de actuaciones.</p>
+    </article>
+    <article class="rounded-2xl border border-primary bg-secondary-first/40 p-6 shadow-lg">
+      <h2 class="text-xl font-bold text-secondary">Formación</h2>
+      <p class="mt-2 text-secondary-first/80">Escuela de música y talleres.</p>
+    </article>
+    <article class="rounded-2xl border border-primary bg-secondary-first/40 p-6 shadow-lg">
+      <h2 class="text-xl font-bold text-secondary">Comunidad</h2>
+      <p class="mt-2 text-secondary-first/80">Un espacio abierto para la cultura.</p>
+    </article>
+  </section>
 </Layout>
+<style>
+  .title {
+    display: inline-block;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-first));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.2;
+    margin: 0;
+  }
+</style>
