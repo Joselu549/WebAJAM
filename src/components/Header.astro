@@ -4,7 +4,7 @@ import logo from '../assets/images/webp/AJAM.webp'
 import '../styles/global.css'
 ---
 
-<div class="fixed top-5 left-5 right-5 flex items-center justify-between rounded-2xl border border-primary bg-amber-50 p-3 shadow-lg">
+<div class="fixed top-3 left-3 right-3 z-50 flex items-center justify-between rounded-2xl border border-primary bg-amber-50 p-3 shadow-lg sm:top-5 sm:left-5 sm:right-5">
   <img
     src={logo.src}
     width="110"
@@ -12,18 +12,18 @@ import '../styles/global.css'
     alt="Home"
   />
   <div class="flex items-center justify-center gap-5 mr-5">
-    <AnimatedUnderlineLink
-      class="smart-link"
-      href="/"
-    >
-      Inicio
-    </AnimatedUnderlineLink>
+    <AnimatedUnderlineLink href="/">Inicio</AnimatedUnderlineLink>
     <AnimatedUnderlineLink href="/sobre-nosotros">Sobre nosotros</AnimatedUnderlineLink>
     <AnimatedUnderlineLink href="/contacto">Contáctanos</AnimatedUnderlineLink>
   </div>
 </div>
+
 <style>
-  .smart-link {
+  :global(a.smart-link) {
     color: var(--color-secondary) !important;
+  }
+
+  :global(a.smart-link::after) {
+    background: var(--color-primary) !important;
   }
 </style>

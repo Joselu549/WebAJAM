@@ -8,6 +8,11 @@
   --color-ninth: #f5f1e8;
 }
 
-body {
-  min-width: 640px;
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
 }

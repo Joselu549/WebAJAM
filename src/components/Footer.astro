@@ -5,13 +5,13 @@ import youtube from "../assets/images/icons/youtube.svg";
 import "../styles/global.css";
 ---
 
-<footer class="w-full h-fit py-5 gap-5 bg-secondary-first text-ninth flex items-center justify-center flex-col">
+<footer class="flex h-fit w-full flex-col items-center justify-center gap-5 bg-secondary px-4 py-5 text-center text-ninth sm:px-6">
   <div class="flex flex-col items-center justify-center gap-1">
     <p class="font-black">Asociación Jumillana Amigos de la Música</p>
     <p>Av. de Murcia, 29, 30520 Jumilla, Murcia</p>
     <p>Teléfono: 660 822 539</p>
   </div>
-  <hr class="w-[50%] m-5 border-ninth" />
+  <hr class="m-5 w-1/2 max-w-xs border-ninth" />
   <div class="flex align-center justify-center gap-5">
     <a href="https://www.facebook.com/ajambanda/" target="_blank">
       <img src={facebook.src} width="35" height="35" alt="Facebook" />
@@ -23,7 +23,7 @@ import "../styles/global.css";
       <img src={youtube.src} width="35" height="35" alt="YouTube" />
     </a>
   </div>
-  <span>
+  <span class="text-xs sm:text-sm">
     &copy; 2025 Asociación Jumillana Amigos de la Música. Todos los derechos
     reservados.
   </span>
