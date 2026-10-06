@@ -8,10 +8,6 @@
   --color-ninth: #f5f1e8;
 }
 
-html {
-  -webkit-text-size-adjust: 100%;
-}
-
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;

@@ -1,0 +1,51 @@
+---
+interface Props {
+  title: string
+  subtitle: string
+  date: string
+  image: string
+  slug: string
+}
+
+const { title, subtitle, date, image, slug } = Astro.props
+---
+
+<label
+  for={`modal-${slug}`}
+  class="blog-card group block w-full cursor-pointer rounded-2xl border border-primary/30 bg-white/60 p-4 text-left shadow-md backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-xl focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-primary"
+  tabindex="0"
+  role="button"
+  aria-label={`Leer artículo: ${title}`}
+>
+  <!-- onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" -->
+  <div class="mb-4 overflow-hidden rounded-xl">
+    <img
+      src={image}
+      alt={title}
+      class="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-105"
+      loading="lazy"
+    />
+  </div>
+  <div class="space-y-2">
+    <time
+      datetime={date}
+      class="text-xs font-medium tracking-wide text-primary uppercase"
+    >
+      {new Date(date).toLocaleDateString('es-ES', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+      })}
+    </time>
+    <h3 class="text-lg font-bold text-secondary transition-colors group-hover:text-primary">
+      {title}
+    </h3>
+    <p class="line-clamp-3 text-sm text-secondary-first/70">{subtitle}</p>
+  </div>
+</label>
+
+<style>
+  .blog-card {
+    will-change: transform;
+  }
+</style>

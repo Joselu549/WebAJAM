@@ -1,53 +1,64 @@
 ---
-import { GlassButton } from "astro-component-kit";
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import { getCollection, render } from 'astro:content'
+import Layout from '../layouts/Layout.astro'
+import BlogCard from '../components/BlogCard.astro'
+import BlogModal from '../components/BlogModal.astro'
+
+const blogs = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+)
+
+const renderedBlogs = await Promise.all(
+  blogs.map(async (blog) => {
+    const { Content } = await render(blog)
+    return {
+      id: blog.id,
+      title: blog.data.title,
+      subtitle: blog.data.subtitle,
+      date: blog.data.date.toISOString(),
+      image: blog.data.image,
+      Content,
+    }
+  }),
+)
 ---
 
 <Layout>
-  <section class="flex flex-col items-center justify-center gap-6 px-6 py-16 text-center">
-    <h1 class="text-4xl font-black sm:text-5xl md:text-7xl title">AJAM</h1>
-    <p class="max-w-2xl text-lg text-secondary-first/80">
-      Asociación Jumillana Amigos de la Música.
-    </p>
-    <div class="flex flex-wrap items-center justify-center gap-4">
-      <GlassButton href="/sobre-nosotros" variant="primary" size="lg">
-        Sobre nosotros
-      </GlassButton>
-      <GlassButton href="/contacto" variant="ghost" size="lg">
-        Contáctanos
-      </GlassButton>
+  <section class="mx-auto max-w-6xl px-6 py-16">
+    <div class="mb-12 text-center">
+      <h1 class="text-4xl font-black sm:text-5xl md:text-6xl">
+        <span class="bg-linear-to-br from-primary to-primary-first bg-clip-text text-transparent">
+          Blog
+        </span>
+      </h1>
+      <p class="mx-auto mt-4 max-w-xl text-lg text-secondary-first/70">
+        Noticias, actuaciones y vida de la Asociación Jumillana Amigos de la Música
+      </p>
+    </div>
+
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {renderedBlogs.map((blog) => (
+        <BlogCard
+          title={blog.title}
+          subtitle={blog.subtitle}
+          date={blog.date}
+          image={blog.image}
+          slug={blog.id}
+        />
+      ))}
     </div>
   </section>
 
-  <section class="flex items-center justify-center">
-    <Card />
-    <!-- <article class="rounded-2xl border border-primary bg-secondary-first/10 p-6 shadow-lg">
-      <h2 class="text-xl font-bold text-secondary">Conciertos</h2>
-      <p class="mt-2 text-secondary-first/80">Temporada de actuaciones.</p>
-    </article> -->
-    <!-- <article class="rounded-2xl border border-primary bg-secondary-first/40 p-6 shadow-lg">
-      <h2 class="text-xl font-bold text-secondary">Formación</h2>
-      <p class="mt-2 text-secondary-first/80">Escuela de música y talleres.</p>
-    </article>
-    <article class="rounded-2xl border border-primary bg-secondary-first/40 p-6 shadow-lg">
-      <h2 class="text-xl font-bold text-secondary">Comunidad</h2>
-      <p class="mt-2 text-secondary-first/80">Un espacio abierto para la cultura.</p>
-    </article> -->
-  </section>
+  {renderedBlogs.map((blog) => (
+    <BlogModal
+      title={blog.title}
+      subtitle={blog.subtitle}
+      date={blog.date}
+      slug={blog.id}
+    >
+      <article class="prose prose-secondary max-w-none">
+        <blog.Content />
+      </article>
+    </BlogModal>
+  ))}
 </Layout>
-<style>
-  .title {
-    display: inline-block;
-    font-weight: 900;
-    background: linear-gradient(
-      135deg,
-      var(--color-primary),
-      var(--color-primary-first)
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    line-height: 1.2;
-    margin: 0;
-  }
-</style>
