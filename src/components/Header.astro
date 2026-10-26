@@ -1,14 +1,15 @@
 ---
 import { AnimatedUnderlineLink } from 'astro-component-kit'
+import { Image } from 'astro:assets'
 import logo from '../assets/images/webp/AJAM.webp'
 import '../styles/global.css'
 ---
 
 <div class="fixed top-3 left-3 right-3 z-50 flex items-center justify-between rounded-2xl border border-primary bg-amber-50 p-3 shadow-lg sm:top-5 sm:left-5 sm:right-5">
-  <img
-    src={logo.src}
-    width="110"
-    height="50"
+  <Image
+    src={logo}
+    width={110}
+    height={50}
     alt="Home"
   />
   <div class="flex items-center justify-center gap-5 mr-5">

@@ -1,87 +1,176 @@
 ---
-import logo from '../assets/images/webp/Foto carnet.png'
+import { Image } from 'astro:assets'
+import logoDefault from '../assets/images/webp/Foto carnet.png'
+
+interface SocialLink {
+  href: string
+  type: 'instagram' | 'youtube' | 'x' | 'facebook' | 'linkedin' | 'web'
+  label?: string
+}
+
+interface Props {
+  title: string
+  subtitle?: string
+  description: string
+  image?: ImageMetadata | string
+  imageAlt?: string
+  socials?: SocialLink[]
+}
+
+const {
+  title,
+  subtitle,
+  description,
+  image = logoDefault,
+  imageAlt = title,
+  socials = [],
+} = Astro.props
+
+const isImageMetadata = typeof image !== 'string'
 ---
 
 <div class="card">
-  <img
-    src={logo.src}
-    alt="Logo"
-  />
+  {isImageMetadata ?
+    <Image
+      src={image as ImageMetadata}
+      alt={imageAlt}
+    />
+  : <img
+      src={image as string}
+      alt={imageAlt}
+    />
+  }
   <div>
-    <h2>Jill Scot</h2>
-    <h3>Frontend Engineer</h3>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, accusantium tenetur. Harum
-      magni fuga quasi hic eaque in ab enim cupiditate quod mollitia! Libero molestiae culpa error,
-      neque aliquam natus ut pariatur assumenda. Hic veniam debitis, maxime vero inventore harum
-      autem dolorem eligendi doloremque ab quasi id magnam libero aut.
-    </p>
-    <div class="socials flex items-center justify-start gap-2">
-      <button>
-        <i>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="30"
-            height="30"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#fff"
-            stroke-width="1"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+    <h2>{title}</h2>
+    {subtitle && <h3>{subtitle}</h3>}
+    <p>{description}</p>
+    {socials.length > 0 && (
+      <div class="socials flex items-center justify-start gap-2">
+        {socials.map((social, index) => (
+          <a
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={social.label || social.type}
+            class:list={[index === 0 && 'has-gradient']}
           >
-            <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
-            <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
-            <path d="M16.5 7.5l0 .01" />
-          </svg>
-        </i>
-      </button>
-      <button>
-        <i>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="30"
-            height="30"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#fff"
-            stroke-width="1"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z" />
-            <path d="M10 9l5 3l-5 3z" />
-          </svg>
-        </i>
-      </button>
-      <button>
-        <i>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="30"
-            height="30"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#fff"
-            stroke-width="1"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
-            <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
-          </svg>
-        </i>
-      </button>
-    </div>
+            <i>
+              {social.type === 'instagram' && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
+                  <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                  <path d="M16.5 7.5l0 .01" />
+                </svg>
+              )}
+              {social.type === 'youtube' && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z" />
+                  <path d="M10 9l5 3l-5 3z" />
+                </svg>
+              )}
+              {social.type === 'x' && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+                  <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+                </svg>
+              )}
+              {social.type === 'facebook' && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+                </svg>
+              )}
+              {social.type === 'linkedin' && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
+                  <path d="M8 11l0 5" />
+                  <path d="M8 8l0 .01" />
+                  <path d="M12 16l0 -5" />
+                  <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+                </svg>
+              )}
+              {social.type === 'web' && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                  <path d="M3.6 9h16.8" />
+                  <path d="M3.6 15h16.8" />
+                  <path d="M11.5 3a17 17 0 0 0 0 18" />
+                  <path d="M12.5 3a17 17 0 0 1 0 18" />
+                </svg>
+              )}
+            </i>
+          </a>
+        ))}
+      </div>
+    )}
   </div>
 </div>
+
 <style>
   * {
     box-sizing: border-box;
   }
 
   :root {
-    /* --gradient: linear-gradient(135deg, var(--color-primary), var(--color-primary-first)); */
     --gradient: linear-gradient(45deg, #ff7c7d, #ffda67);
     --card: var(--color-secondary-first);
   }
@@ -98,6 +187,7 @@ import logo from '../assets/images/webp/Foto carnet.png'
     padding: 44px 30px 44px 20px;
     background: var(--card);
     border-radius: 24px;
+    margin-left: 2.5rem;
   }
 
   .card img {
@@ -134,7 +224,7 @@ import logo from '../assets/images/webp/Foto carnet.png'
     opacity: 0.5;
   }
 
-  .socials > button {
+  .socials > a {
     position: relative;
     border: 0;
     background: transparent;
@@ -142,7 +232,7 @@ import logo from '../assets/images/webp/Foto carnet.png'
     padding: 0;
   }
 
-  .socials > button:first-child::before {
+  .socials > a.has-gradient::before {
     content: '';
     position: absolute;
     z-index: 0;
@@ -157,7 +247,7 @@ import logo from '../assets/images/webp/Foto carnet.png'
     transform: translateY(0);
   }
 
-  .socials > button > i {
+  .socials > a > i {
     position: relative;
     z-index: 1;
     border: 4px solid var(--card);
@@ -172,7 +262,8 @@ import logo from '../assets/images/webp/Foto carnet.png'
 
   @media (width <= 600px) {
     .card {
-      margin: 0 48px;
+      margin-left: 0;
+      margin: 50px;
       padding-left: 50px;
       padding-right: 50px;
       padding-bottom: 60px;
