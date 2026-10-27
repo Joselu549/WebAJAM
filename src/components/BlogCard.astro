@@ -1,9 +1,11 @@
 ---
+import { Image } from 'astro:assets'
+
 interface Props {
   title: string
   subtitle: string
   date: string
-  image: string
+  image: ImageMetadata
   slug: string
 }
 
@@ -19,7 +21,7 @@ const { title, subtitle, date, image, slug } = Astro.props
 >
   <!-- onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" -->
   <div class="mb-4 overflow-hidden rounded-xl">
-    <img
+    <Image
       src={image}
       alt={title}
       class="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-105"

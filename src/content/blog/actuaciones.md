@@ -2,7 +2,7 @@
 title: "Actuaciones y Conciertos"
 subtitle: "La banda de música de Jumilla en escena durante todo el año"
 date: 2025-08-20
-image: "/src/assets/images/webp/fondo_inicio.jpg"
+image: "../../assets/images/webp/fondo_inicio.jpg"
 ---
 
 La Banda de Música de AJAM es la imagen sonora de Jumilla. A lo largo del año, la agrupación ofrece conciertos y participa en actos que forman parte de la vida cultural del pueblo.

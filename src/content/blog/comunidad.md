@@ -2,7 +2,7 @@
 title: "Comunidad AJAM"
 subtitle: "Un espacio abierto donde la música une a todo un pueblo"
 date: 2025-07-10
-image: "/src/assets/images/webp/fondo_inicio4.jpg"
+image: "../../assets/images/webp/fondo_inicio4.jpg"
 ---
 
 AJAM no es solo una banda de música: es una comunidad de personas que comparten la pasión por la música y la cultura. Desde los músicos de la banda hasta los alumnos de la escuela, los voluntarios y los socios, todos forman parte de un proyecto común.

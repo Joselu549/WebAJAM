@@ -2,7 +2,7 @@
 title: "Escuela de Música"
 subtitle: "Formación musical para todas las edades en el corazón de Jumilla"
 date: 2025-09-15
-image: "/src/assets/images/webp/fondo_inicio3.jpg"
+image: "../../assets/images/webp/fondo_inicio3.jpg"
 ---
 
 La Escuela de Música de AJAM es el corazón formativo de la asociación. Aquí, alumnos de todas las edades —desde los más pequeños que dan sus primeros pasos con un instrumento hasta adultos que retoman su pasión musical— reciben una formación de calidad impartida por profesores especializados.
