@@ -25,10 +25,22 @@ import '../styles/global.css'
     <title>AJAM</title>
     <ClientRouter />
   </head>
-  <body class="bg-ninth">
-    <div class="flex min-h-screen flex-col relative">
+  <body class="relative isolate bg-ninth">
+    <div
+      class="music-background"
+      aria-hidden="true"
+    >
+      <span class="music-note music-note-one">♪</span>
+      <span class="music-note music-note-two">♫</span>
+      <span class="music-note music-note-three">♬</span>
+      <span class="music-note music-note-four">♩</span>
+      <span class="music-note music-note-five">♪</span>
+      <span class="music-note music-note-six">♫</span>
+      <span class="music-note music-note-seven">♬</span>
+    </div>
+    <div class="relative z-10 flex min-h-screen flex-col">
       <Header />
-      <main class="flex items-center justify-center flex-1 mt-30 mb-10">
+      <main class="flex items-center justify-center flex-1 mt-40 mb-10">
         <slot />
       </main>
       <Footer />

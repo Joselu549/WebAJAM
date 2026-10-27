@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content'
 import Layout from '../layouts/Layout.astro'
 import BlogCard from '../components/BlogCard.astro'
 import BlogModal from '../components/BlogModal.astro'
+import TitleAndSubtitle from '../components/TitleAndSubtitle.astro'
 
 const blogs = (await getCollection('blog')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
@@ -24,19 +25,12 @@ const renderedBlogs = await Promise.all(
 ---
 
 <Layout>
-  <section class="mx-auto max-w-6xl px-6 py-16">
-    <div class="mb-12 text-center">
-      <h1 class="text-4xl font-black sm:text-5xl md:text-6xl">
-        <span class="bg-linear-to-br from-primary to-primary-first bg-clip-text text-transparent">
-          Blog
-        </span>
-      </h1>
-      <p class="mx-auto mt-4 max-w-xl text-lg text-secondary-first/70">
-        Noticias, actuaciones y vida de la Asociación Jumillana Amigos de la Música
-      </p>
-    </div>
-
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+  <div class="mx-auto max-w-6xl px-6">
+    <TitleAndSubtitle
+      title="Blog"
+      subtitle="Noticias, actuaciones y vida de la Asociación Jumillana Amigos de la Música"
+    />
+    <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {renderedBlogs.map((blog) => (
         <BlogCard
           title={blog.title}
@@ -47,7 +41,7 @@ const renderedBlogs = await Promise.all(
         />
       ))}
     </div>
-  </section>
+  </div>
 
   {renderedBlogs.map((blog) => (
     <BlogModal

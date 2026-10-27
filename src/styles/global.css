@@ -12,3 +12,81 @@
 ::view-transition-new(root) {
   animation: none;
 }
+
+.music-background {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.music-note {
+  position: absolute;
+  color: var(--color-primary);
+  font-family: Georgia, serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1;
+  opacity: 0.18;
+  animation: float-music-note linear both;
+  animation-timeline: scroll(root block);
+  animation-duration: auto;
+}
+
+.music-note-one {
+  top: 14%;
+  left: 8%;
+}
+
+.music-note-two {
+  top: 27%;
+  right: 12%;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+}
+
+.music-note-three {
+  top: 47%;
+  left: 18%;
+}
+
+.music-note-four {
+  top: 62%;
+  right: 20%;
+  font-size: clamp(1.75rem, 4vw, 3.25rem);
+}
+
+.music-note-five {
+  top: 79%;
+  left: 7%;
+}
+
+.music-note-six {
+  top: 86%;
+  right: 9%;
+  font-size: clamp(2.25rem, 5vw, 4rem);
+}
+
+.music-note-seven {
+  top: 8%;
+  right: 38%;
+  font-size: clamp(1.75rem, 4vw, 3rem);
+}
+
+@keyframes float-music-note {
+  from {
+    transform: translate3d(0, 0, 0) rotate(-8deg);
+    opacity: 0.12;
+  }
+
+  to {
+    transform: translate3d(24px, -160px, 0) rotate(8deg);
+    opacity: 0.3;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .music-note {
+    animation: none;
+    opacity: 0.18;
+  }
+}
