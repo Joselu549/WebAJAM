@@ -1,11 +1,58 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content'
+import Layout from '../layouts/Layout.astro'
+import BlogCard from '../components/BlogCard.astro'
+import BlogModal from '../components/BlogModal.astro'
+import TitleAndSubtitle from '../components/TitleAndSubtitle.astro'
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const blogs = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+)
+
+const renderedBlogs = await Promise.all(
+  blogs.map(async (blog) => {
+    const { Content } = await render(blog)
+    return {
+      id: blog.id,
+      title: blog.data.title,
+      subtitle: blog.data.subtitle,
+      date: blog.data.date.toISOString(),
+      image: blog.data.image,
+      Content,
+    }
+  }),
+)
 ---
 
 <Layout>
-	<Welcome />
+  <div class="mx-auto max-w-6xl px-6">
+    <TitleAndSubtitle
+      title="Blog"
+      subtitle="Noticias, actuaciones y vida de la Asociación Jumillana Amigos de la Música"
+    />
+    <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {renderedBlogs.map((blog) => (
+        <BlogCard
+          title={blog.title}
+          subtitle={blog.subtitle}
+          date={blog.date}
+          image={blog.image}
+          slug={blog.id}
+        />
+      ))}
+    </div>
+  </div>
+
+  {renderedBlogs.map((blog) => (
+    <BlogModal
+      title={blog.title}
+      subtitle={blog.subtitle}
+      date={blog.date}
+      slug={blog.id}
+    >
+      <article class="prose prose-secondary max-w-none">
+        <blog.Content />
+      </article>
+    </BlogModal>
+  ))}
 </Layout>

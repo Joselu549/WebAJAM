@@ -1,0 +1,12 @@
+---
+const { title, subtitle } = Astro.props
+---
+
+<div class="text-center">
+  <h1 class="text-4xl font-black sm:text-5xl md:text-6xl">
+    <span class="bg-linear-to-br from-primary to-primary-first bg-clip-text text-transparent">
+      {title}
+    </span>
+  </h1>
+  <p class="mx-auto mt-4 max-w-xl text-lg text-secondary-first/80">{subtitle}</p>
+</div>

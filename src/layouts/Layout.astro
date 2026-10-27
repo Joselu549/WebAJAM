@@ -1,22 +1,58 @@
+---
+import ClientRouter from 'astro/components/ClientRouter.astro'
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
+import '../styles/global.css'
+---
+
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg"
+    />
+    <link
+      rel="icon"
+      href="/favicon.ico"
+    />
+    <title>AJAM</title>
+    <ClientRouter />
+  </head>
+  <body class="relative isolate bg-ninth">
+    <div
+      class="music-background"
+      aria-hidden="true"
+    >
+      <span class="music-note music-note-one">♪</span>
+      <span class="music-note music-note-two">♫</span>
+      <span class="music-note music-note-three">♬</span>
+      <span class="music-note music-note-four">♩</span>
+      <span class="music-note music-note-five">♪</span>
+      <span class="music-note music-note-six">♫</span>
+      <span class="music-note music-note-seven">♬</span>
+    </div>
+    <div class="relative z-10 flex min-h-screen flex-col">
+      <Header />
+      <main class="flex items-center justify-center flex-1 mt-40 mb-10">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>
