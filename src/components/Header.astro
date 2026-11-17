@@ -1,30 +1,102 @@
 ---
-import { AnimatedUnderlineLink } from 'astro-component-kit'
+import { AnimatedUnderlineLink, BurgerMorphIcon } from 'astro-component-kit'
 import { Image } from 'astro:assets'
 import logo from '../assets/images/webp/AJAM.webp'
 import '../styles/global.css'
+
+const navLinks = [
+  { name: 'Inicio', href: '/' },
+  { name: 'Sobre nosotros', href: '/sobre-nosotros' },
+  { name: 'Contáctanos', href: '/contacto' },
+]
 ---
 
-<div class="fixed top-3 left-3 right-3 z-50 flex items-center justify-between rounded-2xl border border-primary bg-amber-50 p-3 shadow-lg sm:top-5 sm:left-5 sm:right-5">
-  <Image
-    src={logo}
-    width={110}
-    height={60}
-    alt="Home"
-  />
-  <div class="flex items-center justify-center gap-5 mr-5">
-    <AnimatedUnderlineLink href="/">Inicio</AnimatedUnderlineLink>
-    <AnimatedUnderlineLink href="/sobre-nosotros">Sobre nosotros</AnimatedUnderlineLink>
-    <AnimatedUnderlineLink href="/contacto">Contáctanos</AnimatedUnderlineLink>
+<!-- Barra de navegación -->
+<header
+  class="fixed top-3 left-3 right-3 z-50 flex items-center
+         justify-between rounded-2xl border border-primary
+         bg-ninth p-3 shadow-lg sm:top-5 sm:left-5 sm:right-5"
+>
+  <a
+    href="/"
+    aria-label="Ir al inicio"
+  >
+    <Image
+      src={logo}
+      width={110}
+      height={60}
+      alt="AJAM, inicio"
+    />
+  </a>
+
+  <!-- Navegación de escritorio -->
+  <nav class="mr-5 hidden items-center gap-5 sm:flex">
+    {navLinks.map((route) => (
+      <AnimatedUnderlineLink href={route.href}>{route.name}</AnimatedUnderlineLink>
+    ))}
+  </nav>
+
+  <!-- Botón de menú móvil -->
+  <div class="mr-3 sm:hidden">
+    <BurgerMorphIcon />
   </div>
-</div>
+</header>
+
+<!-- Fondo oscuro -->
+<label
+  id="mobile-overlay"
+  class="invisible pointer-events-none fixed inset-0 z-40
+         bg-secondary/60 opacity-0
+         transition-opacity duration-300 sm:hidden"
+  aria-label="Cerrar menú"
+></label>
+
+<!-- Menú móvil -->
+<nav
+  id="mobile-menu"
+  class="invisible fixed top-30 left-3 right-3 z-50
+         -translate-y-2 rounded-2xl border border-primary
+         bg-secondary-first p-4 text-ninth opacity-0 shadow-xl
+         transition-all duration-300 sm:hidden"
+  aria-label="Navegación móvil"
+>
+  <ul class="flex flex-col gap-2">
+    {navLinks.map((route) => (
+      <li>
+        <a
+          href={route.href}
+          class="block rounded-xl px-4 py-3
+                 transition-colors hover:bg-ninth/10"
+        >
+          {route.name}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
 
 <style>
+  :global(body:has(.burger.active) #mobile-menu) {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  :global(body:has(.burger.active) #mobile-overlay) {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   :global(a.smart-link) {
     color: var(--color-secondary) !important;
   }
 
   :global(a.smart-link::after) {
     background: var(--color-primary) !important;
+  }
+
+  :global(.burger span) {
+    background: var(--color-secondary) !important;
   }
 </style>
